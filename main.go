@@ -19,12 +19,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if svc := os.Getenv("APP_SVC"); len(svc) > 0 {
-		fmt.Fprintf(w, "Hi, I'm the %s service!\n\nHostname: %s", svc, host)
+		fmt.Fprintf(w, "Hi, I'm the %s service!\n\nHostname: %s\n", svc, host)
 	} else {
-		fmt.Fprintf(w, "Hi, nice to serve you today.\n\nHostname: %s", host)
+		fmt.Fprintf(w, "Hi, nice to serve you today.\n\nHostname: %s\n", host)
 	}
 	if node := os.Getenv("NODE_NAME"); len(node) > 0 {
-		fmt.Fprintf(w, "\nNode: %s", node)
+		fmt.Fprintf(w, "Node: %s\n", node)
 	}
 
 }
